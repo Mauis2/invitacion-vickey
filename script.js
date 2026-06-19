@@ -1,3 +1,8 @@
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+// Estrellas
 const container = document.getElementById("stars-container");
 
 for(let i = 0; i < 150; i++){
@@ -58,6 +63,7 @@ setInterval(updateCountdown,1000);
 updateCountdown();
 
 
+// Nubes
 window.addEventListener("load", () => {
 
     const cloudsContainer =
@@ -97,6 +103,8 @@ window.addEventListener("load", () => {
         cloudsContainer.appendChild(cloud);
     }
 
+ 
+
 })
 
 
@@ -120,7 +128,7 @@ document.getElementById("messageForm").addEventListener("submit", async function
         body: JSON.stringify(datos)
     });
 
-    alert("💛 Gracias por tu hermoso mensaje para Vickey 🌸");
+    mostrarMensaje("💛 Gracias por tu hermoso mensaje para Vickey 🌸");
 
     this.reset();
 });
@@ -143,7 +151,7 @@ document.getElementById("rsvpForm").addEventListener("submit", async function(e)
         body: JSON.stringify(datos)
     });
 
-    alert("🌙 Gracias por confirmar tu asistencia ✨");
+    mostrarMensaje("🌙 Gracias por confirmar tu asistencia ✨");
 
     this.reset();
 });
@@ -171,3 +179,19 @@ musicBtn.addEventListener("click", () => {
     }
 
 });
+
+
+function mostrarMensaje(texto) {
+
+    const mensaje = document.getElementById("mensaje-exito");
+
+    mensaje.textContent = texto;
+
+    mensaje.classList.add("mostrar");
+
+    setTimeout(() => {
+
+        mensaje.classList.remove("mostrar");
+
+    }, 3000);
+}

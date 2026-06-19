@@ -15,10 +15,18 @@ body{
         #b9708ec8
     );
 
-  
-
     position:relative;
       
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.invitation-card {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -41,7 +49,7 @@ body{
     position:absolute;
 
     top:95px;
-    right:190px;
+    right:300px;
 
     width:140px;
     height:140px;
@@ -703,6 +711,43 @@ footer{
 }
 
 
+
+
+#mensaje-exito {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%) translateY(100px);
+
+    background: rgba(255, 248, 230, 0.95);
+
+    color: #6f5b46;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
+    font-family: 'Poppins', sans-serif;
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    transition: .5s;
+}
+
+#mensaje-exito.mostrar {
+
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+}
 
 /* ========================= */
 /*        CELULARES 📱        */
