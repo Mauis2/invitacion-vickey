@@ -5,7 +5,7 @@ if ("scrollRestoration" in history) {
 // Estrellas
 const container = document.getElementById("stars-container");
 
-for(let i = 0; i < 150; i++){
+for(let i = 0; i < 80; i++){
 
     const star = document.createElement("div");
 
@@ -30,7 +30,7 @@ for(let i = 0; i < 150; i++){
 }
 
 
-const eventDate = new Date("2026-07-4 15:00:00");
+const eventDate = new Date("2026-07-5 14:30:00");
 
 function updateCountdown(){
 

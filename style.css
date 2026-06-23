@@ -113,7 +113,7 @@ html, body {
 
     border-radius:100px;
 
-   filter:blur(1px);
+   /*filter:blur(1px);*/
 
     animation:floatCloud ease-in-out infinite;
 }
@@ -388,7 +388,7 @@ html, body {
 
     text-align:center;
 
-    margin:15px 0;
+    margin:10px 0;
 }
 
 .separator img{
