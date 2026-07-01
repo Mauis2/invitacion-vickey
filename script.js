@@ -16,6 +16,7 @@ for(let i = 0; i < 80; i++){
 
     star.style.animationDuration =
         (Math.random() * 3 + 1) + "s";
+        
 
     star.style.animationDelay =
         Math.random() * 5 + "s";

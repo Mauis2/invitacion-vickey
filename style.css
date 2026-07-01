@@ -749,6 +749,41 @@ footer{
     transform: translateX(-50%) translateY(0);
 }
 
+
+
+.schedule .event-card p{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px dashed rgba(111,91,70,.2);
+
+    font-size:1rem;
+}
+
+.schedule .event-card p:last-child{
+
+    border-bottom:none;
+}
+
+.schedule span{
+
+    color:#6f5b46;
+}
+
+.schedule strong{
+
+    color:#8b7355;
+}
+
+
+
+
 /* ========================= */
 /*        CELULARES 📱        */
 /* ========================= */
