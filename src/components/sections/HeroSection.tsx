@@ -29,7 +29,7 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop py-16 overflow-hidden"
     >
-      <audio ref={audioRef} src="/music.mp3" loop preload="none" />
+      <audio ref={audioRef} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/music.mp3`} loop preload="none" />
 
       <StarField count={8} />
       <FloatingCloud className="top-10 left-10" size="text-6xl" />

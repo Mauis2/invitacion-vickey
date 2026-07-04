@@ -37,6 +37,7 @@ jobs:
           NEXT_PUBLIC_APPWRITE_GALLERY_COLLECTION_ID: ${{ vars.NEXT_PUBLIC_APPWRITE_GALLERY_COLLECTION_ID }}
           NEXT_PUBLIC_APPWRITE_GALLERY_BUCKET_ID: ${{ vars.NEXT_PUBLIC_APPWRITE_GALLERY_BUCKET_ID }}
           NEXT_PUBLIC_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          NEXT_PUBLIC_BASE_PATH: /invitacion-vickey
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

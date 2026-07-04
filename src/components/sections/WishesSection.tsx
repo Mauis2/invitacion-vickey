@@ -27,16 +27,34 @@ export default function WishesSection() {
     loadWishes()
   }, [loadWishes])
 
-  // Rotate through wishes randomly
+  // Rotate through wishes — show all before repeating (shuffle deck)
   useEffect(() => {
     if (wishes.length === 0) return
-    const showRandom = () => {
-      const random = wishes[Math.floor(Math.random() * wishes.length)]
-      setCurrentWish(random)
+    let timeout: NodeJS.Timeout
+    let queue: WishEntry[] = []
+
+    const shuffle = (arr: WishEntry[]) => {
+      const shuffled = [...arr]
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      }
+      return shuffled
     }
-    showRandom()
-    const interval = setInterval(showRandom, 6000)
-    return () => clearInterval(interval)
+
+    const showNext = () => {
+      if (queue.length === 0) {
+        queue = shuffle(wishes)
+      }
+      const next = queue.shift()!
+      setCurrentWish(next)
+      // Base 5s + 30ms per character, capped at 15s
+      const duration = Math.min(5000 + next.message.length * 30, 15000)
+      timeout = setTimeout(showNext, duration)
+    }
+
+    showNext()
+    return () => clearTimeout(timeout)
   }, [wishes])
 
   const handleSubmitWish = async (e: React.FormEvent) => {
@@ -70,7 +88,7 @@ export default function WishesSection() {
         </motion.h3>
 
         {/* Wish Display — cielo nocturno con estrellas fugaces */}
-        <div className="relative h-56 md:h-64 rounded-3xl overflow-hidden mb-12 border border-outline-variant/20"
+        <div className="relative min-h-[14rem] md:min-h-[16rem] rounded-3xl overflow-hidden mb-12 border border-outline-variant/20"
           style={{
             background: 'radial-gradient(ellipse at 50% 100%, rgba(248, 200, 220, 0.15) 0%, rgba(251, 249, 245, 0.05) 60%, transparent 100%), linear-gradient(to bottom, rgba(30, 31, 28, 0.03), rgba(121, 84, 101, 0.05))'
           }}
@@ -100,12 +118,12 @@ export default function WishesSection() {
           ))}
 
           {/* Deseo actual */}
-          <div className="absolute inset-0 flex items-center justify-center px-8">
+          <div className="absolute inset-0 flex items-center justify-center px-6 py-8 overflow-y-auto">
             <AnimatePresence mode="wait">
               {currentWish ? (
                 <motion.div
                   key={currentWish.$id}
-                  className="text-center max-w-md"
+                  className="text-center max-w-lg"
                   initial={{ opacity: 0, scale: 0.8, filter: 'blur(8px)' }}
                   animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                   exit={{ opacity: 0, scale: 1.05, filter: 'blur(6px)', y: -10 }}
@@ -128,7 +146,9 @@ export default function WishesSection() {
                   >
                     ⭐
                   </motion.span>
-                  <p className="font-body text-body-lg text-on-surface italic leading-relaxed">
+                  <p className={`font-body text-on-surface italic leading-relaxed ${
+                    currentWish.message.length > 200 ? 'text-body-md' : 'text-body-lg'
+                  }`}>
                     &ldquo;{currentWish.message}&rdquo;
                   </p>
                   <motion.p
