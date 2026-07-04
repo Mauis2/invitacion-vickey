@@ -46,17 +46,17 @@ export default function GallerySection() {
         Momentos Mágicos
       </motion.h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-5xl mx-auto">
         {images.map((item, i) => (
           <motion.div
             key={i}
-            className={`aspect-square rounded-2xl overflow-hidden shadow-md shadow-primary-container/30 border border-primary-container/40 p-2 bg-primary-container/15 ${
+            className={`aspect-square rounded-2xl overflow-hidden shadow-md shadow-primary-container/30 border border-primary-container/40 p-1.5 md:p-2 bg-primary-container/15 ${
               i === 1 ? 'md:-translate-y-4' : ''
             }`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: i === 1 ? -16 : 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
             whileHover={{ scale: 1.02 }}
           >
             <div className="relative w-full h-full rounded-xl overflow-hidden">
@@ -65,7 +65,7 @@ export default function GallerySection() {
                 alt={item.alt}
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 50vw, 33vw"
                 unoptimized
               />
             </div>
