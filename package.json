@@ -1,0 +1,33 @@
+{
+  "name": "bbshower",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup-appwrite": "npx tsx scripts/setup-appwrite.ts"
+  },
+  "dependencies": {
+    "appwrite": "15.0.0",
+    "framer-motion": "11.18.0",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.0",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "autoprefixer": "^10.5.2",
+    "dotenv": "16.3.1",
+    "eslint": "9.16.0",
+    "eslint-config-next": "15.1.0",
+    "node-appwrite": "^26.2.0",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.16",
+    "tsx": "4.7.0",
+    "typescript": "5.7.2"
+  }
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vickey Eileen - Baby Shower</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#60603e",
+                        "tertiary-container": "#d9d7ac",
+                        "primary-fixed-dim": "#e9bacd",
+                        "surface": "#fbf9f5",
+                        "surface-dim": "#dbdad6",
+                        "outline-variant": "#d2c3c7",
+                        "on-tertiary-container": "#5e5e3b",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-surface": "#30312e",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-variant": "#e4e2de",
+                        "surface-container-low": "#f5f3ef",
+                        "primary-container": "#f8c8dc",
+                        "surface-tint": "#795465",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-primary-fixed-variant": "#5f3c4d",
+                        "primary": "#795465",
+                        "on-secondary-fixed-variant": "#574500",
+                        "secondary-fixed": "#ffe088",
+                        "inverse-primary": "#e9bacd",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-container": "#745c00",
+                        "surface-bright": "#fbf9f5",
+                        "secondary-container": "#fed65b",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#ffd8e7",
+                        "on-primary": "#ffffff",
+                        "background": "#fbf9f5",
+                        "on-surface-variant": "#4f4448",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#484828",
+                        "outline": "#817478",
+                        "on-primary-container": "#765162",
+                        "on-background": "#1b1c1a",
+                        "surface-container-high": "#eae8e4",
+                        "secondary": "#735c00",
+                        "on-tertiary-fixed": "#1d1d03",
+                        "surface-container": "#efeeea",
+                        "tertiary-fixed-dim": "#cac99f",
+                        "surface-container-highest": "#e4e2de",
+                        "tertiary-fixed": "#e6e5b9",
+                        "on-primary-fixed": "#2e1221",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max-width": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Cloud & Moon Float Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-10px) translateX(5px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float 8s ease-in-out infinite 2s;
+        }
+
+        /* Twinkle Animation */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .animate-twinkle {
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        /* Periodic Pulse */
+        @keyframes pulsePeriodic {
+            0%, 90%, 100% { transform: scale(1); }
+            95% { transform: scale(1.05); }
+        }
+        .animate-pulse-periodic {
+            animation: pulsePeriodic 5s ease-in-out infinite;
+        }
+
+        /* Fade and Slide In */
+        @keyframes fadeSlideIn {
+            0% { opacity: 0; transform: translateX(-30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .animate-scroll-reveal {
+            animation: fadeSlideIn 1.5s ease-out forwards;
+        }
+
+        /* Shooting Star Animation */
+        @keyframes shootingStar {
+            0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateX(300px) translateY(300px) rotate(45deg); opacity: 0; }
+        }
+        .shooting-star-fx {
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255, 216, 231, 1), transparent);
+            animation: shootingStar 3s linear infinite;
+        }
+        
+        /* Footer Pulse */
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        .footer-icons span {
+            display: inline-block;
+            animation: gentlePulse 4s ease-in-out infinite;
+        }
+        .footer-icons span:nth-child(even) {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Pattern Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-20 z-[-1]" style="background-image: radial-gradient(circle at 50% 50%, var(--tw-colors-primary-container) 0%, transparent 60%);"></div>
+<!-- Main Container -->
+<main class="max-w-container-max-width mx-auto pb-32">
+<!-- 1. Hero Section -->
+<header class="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop py-16 overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-10 left-10 text-primary-fixed-dim opacity-60 animate-float">
+<span class="material-symbols-outlined fill-icon text-6xl">cloud</span>
+</div>
+<div class="absolute top-20 right-20 text-secondary-container opacity-80 animate-twinkle">
+<span class="material-symbols-outlined fill-icon text-4xl">star</span>
+</div>
+<div class="absolute bottom-20 left-1/4 text-primary-fixed-dim opacity-50 animate-float-delayed">
+<span class="material-symbols-outlined fill-icon text-7xl">cloud</span>
+</div>
+<div class="z-10 bg-surface/80 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-xl shadow-primary-container/20 border border-outline-variant/30 max-w-2xl w-full mx-auto flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 animate-float">brightness_3</span>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-2">Baby Shower de</h1>
+<h2 class="font-display-lg text-4xl md:text-5xl text-on-surface mb-6">Vickey Eileen</h2>
+<!-- Music Player Widget -->
+<div class="flex items-center gap-4 bg-surface-container-low px-6 py-3 rounded-full border border-primary-container/50 shadow-sm mt-4">
+<button class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+</button>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reproduciendo</span>
+<span class="font-body-md text-body-md text-primary">Melodía de Cuna</span>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. Intro Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-16 text-center max-w-3xl mx-auto relative">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-4 absolute top-10 right-10 animate-twinkle">auto_awesome</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">Nuestro bebé</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                Con mucha ilusión esperamos la llegada de Vickey Eileen C C. Cada día contamos las horas para conocer su sonrisa y comenzar esta hermosa aventura.
+            </p>
+</section>
+<!-- 3. Countdown Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-12 flex justify-center">
+<div class="bg-primary-container/30 border border-primary-fixed/50 rounded-2xl p-8 flex flex-wrap justify-center gap-6 md:gap-12 shadow-sm">
+<div class="flex flex-col items-center animate-pulse-periodic">
+<span class="font-display-lg text-4xl text-primary mb-1">120</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Días</span>
+</div>
+<div class="flex flex-col items-center animate-pulse-periodic" style="animation-delay: 1.5s;">
+<span class="font-display-lg text-4xl text-primary mb-1">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Horas</span>
+</div>
+<div class="flex flex-col items-center animate-pulse-periodic" style="animation-delay: 3s;">
+<span class="font-display-lg text-4xl text-primary mb-1">45</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Min</span>
+</div>
+</div>
+</section>
+<!-- 4. Message Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-20 relative overflow-hidden my-12">
+<div class="absolute inset-0 bg-surface-container-high/40 rounded-3xl -mx-4 md:mx-0 z-0">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/40 rounded-full blur-3xl mix-blend-multiply"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-tertiary-container/30 rounded-full blur-3xl mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center px-4">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">Nuestro pequeño milagro</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed italic mb-8">
+                    "Un pedacito de cielo bajó a la tierra para llenar nuestros corazones de amor infinito. Queremos compartir esta inmensa alegría contigo en un día lleno de magia, risas y bendiciones para nuestra pequeña estrella."
+                </p>
+<div class="flex justify-center gap-2 text-secondary-container">
+<span class="material-symbols-outlined fill-icon animate-twinkle">star</span>
+<span class="material-symbols-outlined fill-icon text-sm mt-1 animate-twinkle" style="animation-delay: 0.5s;">star</span>
+<span class="material-symbols-outlined fill-icon text-xs mt-2 animate-twinkle" style="animation-delay: 1s;">star</span>
+</div>
+</div>
+</section>
+<!-- 5. Gallery Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-16">
+<h3 class="font-headline-md text-headline-md text-primary text-center mb-10">Momentos Mágicos</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-md shadow-outline-variant/20 border border-surface-variant p-2 bg-surface">
+<img class="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" data-alt="Soft focus watercolor illustration of a sleeping baby dragon on a fluffy cloud, pastel pink and cream colors, dreamy nursery art style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVJ-xwKBYETlqCG84RpfYo52BVItl-bDGlJDiAkt3iKHsFPkcSqLobCsHvFBXsvp4rcB8EWKQHdK0vguj60ZmzRB0jymsZQNQLFuNQOwRawKATu-owS6-EBk46e2ev25eloULWjJD5w_HSp_xOi3Y06ol85Z2pkFycPbodXHT4ksEAtQ1fvPoM9YHILJ6oY35qy5UObXdxeI0sycs5USLNidhltB1VdZ0t4qT4CyV7DD1FowhQbAgWQ10tbdXSkFQ_WA"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-md shadow-outline-variant/20 border border-surface-variant p-2 bg-surface md:-translate-y-4">
+<img class="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" data-alt="Watercolor painting of a crescent moon and scattered golden stars against a soft creamy background, gentle and ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGh29yveS8QBMagK09j-pG44p90_WTeZfPyUr2FL7IRDPQcuAxiBKEFGfI6hh1ehJlA4s7SHI78jy3dWd-_enKRem1ZrwU3PkoAnasxOkd7Z6LMlsL7-pS4_eFG2YXXWtRx3FdUiSGpcSVHII4wUyx1yzQtBz1-khT-rHJeU2BZ8_JpJta2dzVyD6kFh-nR6_30eoNzpwSAZ2Bnz_NgJEqe9xo_yXksCAmIapVKyJF46szD--wDokH9Kj1E0NKdmmXhDU"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-md shadow-outline-variant/20 border border-surface-variant p-2 bg-surface">
+<img class="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" data-alt="Cute watercolor illustration of baby items like a rattle and tiny shoes floating among soft pink clouds, magical and delicate atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiPP-JBVKYK5o-MjN22wPYXDtiP2Q7DTPNhW7mMRm7vmvbgN-UPMncLuBXFgMFFrKFFlhE3Ni7Cd0gR-J1Le3z420vkgm4Djrnmdr1-HhpOOxmG7BnF9jrdaGIaBw9ub7RkcDPboJPXdma_hXOhVSHTOgm2BMdq-zKYSM6JpBgLXrY1TauX3DaxHZJ1k0I15BTkwuDDosspx-WwN1Bas8UddgTxsjzUE-ZZWEbCBbZjHW84LApCK00o3pciZF_hyQ3qT4"/>
+</div>
+</div>
+</section>
+<!-- 6. Event Info -->
+<section class="px-margin-mobile md:px-margin-desktop py-16 flex justify-center">
+<div class="bg-surface rounded-3xl p-8 md:p-12 shadow-lg shadow-primary-container/20 border border-outline-variant/30 max-w-lg w-full text-center relative">
+<span class="material-symbols-outlined text-primary-fixed-dim absolute -top-4 -left-4 text-5xl rotate-12 animate-float">loyalty</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8">Cuándo y Dónde</h3>
+<div class="flex flex-col gap-6 mb-10">
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-tertiary">calendar_month</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">5 de Julio, 2026</p>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-tertiary">schedule</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">2:30 PM</p>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Claustros 1, La Cruz</p>
+</div>
+</div>
+<button class="bg-gradient-to-r from-primary-container to-surface-container-low border border-secondary-container/50 text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider py-3 px-8 rounded-full hover:shadow-md hover:shadow-primary-container/40 transition-all flex items-center gap-2 mx-auto">
+<span>Ver ubicación</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</section>
+<!-- 7. Program Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-16">
+<h3 class="font-headline-md text-headline-md text-primary text-center mb-12">Itinerario Estelar</h3>
+<div class="max-w-2xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary-container before:via-tertiary-container before:to-transparent">
+<!-- Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-8">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10 ml-0 md:ml-auto md:mr-auto">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl bg-surface-container-low border border-surface-variant shadow-sm text-left md:group-odd:text-right">
+<span class="font-label-sm text-label-sm text-tertiary block mb-1">2:30 PM</span>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Cita</h4>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 ml-0 md:ml-auto md:mr-auto">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">restaurant</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl bg-surface/50 border border-outline-variant/30 text-left md:group-odd:text-right">
+<span class="font-label-sm text-label-sm text-tertiary block mb-1">3:30 PM</span>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Aperitivos</h4>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 ml-0 md:ml-auto md:mr-auto">
+<span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl bg-surface/50 border border-outline-variant/30 text-left md:group-odd:text-right">
+<span class="font-label-sm text-label-sm text-tertiary block mb-1">4:00 PM</span>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Show y sorpresas</h4>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 ml-0 md:ml-auto md:mr-auto">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">local_dining</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl bg-surface/50 border border-outline-variant/30 text-left md:group-odd:text-right">
+<span class="font-label-sm text-label-sm text-tertiary block mb-1">5:30 PM</span>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Comida</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Wish Section & RSVP -->
+<section class="px-margin-mobile md:px-margin-desktop py-16 relative">
+<div class="max-w-3xl mx-auto text-center z-10 relative">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">Un deseo para nuestra bebé</h3>
+<!-- Shooting Star Message Area -->
+<div class="relative h-48 bg-surface-container-highest/20 rounded-2xl overflow-hidden border border-outline-variant/20 mb-12 flex items-center justify-center z-0">
+<div class="shooting-star-fx top-4 left-10 z-0"></div>
+<div class="shooting-star-fx top-20 left-1/3 z-0" style="animation-delay: 1.5s;"></div>
+<div class="shooting-star-fx top-10 right-1/4 z-0" style="animation-delay: 2.2s;"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic z-10 px-6 animate-scroll-reveal">
+                        Deja tu mensaje de amor en las estrellas...
+                    </p>
+</div>
+<!-- RSVP Form -->
+<div class="bg-surface-container-low p-8 rounded-3xl border border-surface-variant shadow-sm max-w-xl mx-auto text-left relative z-10">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">Confirmar asistencia</h4>
+<form class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">Nombre</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body-md placeholder:font-body-md placeholder:italic placeholder:text-outline" placeholder="Tu nombre completo" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">Asistentes</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body-md">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+</select>
+</div>
+<button class="w-full bg-gradient-to-r from-primary-container to-primary-fixed py-3 rounded-full font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider hover:shadow-md transition-shadow mt-4" type="button">
+                            Enviar Confirmación
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Decor -->
+<footer class="text-center py-10 pb-24 text-2xl border-t border-surface-variant/50 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/10 -z-10"></div>
+<div class="flex justify-center gap-4 text-tertiary footer-icons">
+<span>🌙</span> <span>☁️</span> <span>⭐</span> <span>🌸</span> <span>🌻</span> <span>🌸</span> <span>⭐</span> <span>☁️</span> <span>🌙</span>
+</div>
+</footer>
+<!-- Bottom Nav Shell (as per JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-surface-container-low/80 backdrop-blur-md shadow-md border-t border-outline-variant/30 rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm mt-1">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+<span class="font-label-sm text-label-sm mt-1">Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">RSVP</span>
+</a>
+</nav>
+<!-- Top App Bar (Hidden on Mobile) -->
+<header class="hidden md:flex fixed top-0 left-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-transparent">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">Vickey Eileen</div>
+<div class="flex gap-6 items-center">
+<a class="text-primary font-bold font-label-sm text-label-sm hover:text-secondary transition-colors scale-95 transition-transform duration-300" href="#">Home</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Story</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">Gallery</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors" href="#">RSVP</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer" data-icon="music_note">music_note</span>
+<span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer" data-icon="menu">menu</span>
+</div>
+</header>
+</body></html>
