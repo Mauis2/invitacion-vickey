@@ -1,0 +1,6 @@
+[
+  { "time": "2:30 PM", "title": "Cita", "icon": "schedule" },
+  { "time": "3:30 PM", "title": "Aperitivos", "icon": "restaurant" },
+  { "time": "4:00 PM", "title": "Show y sorpresas", "icon": "star" },
+  { "time": "5:30 PM", "title": "Comida", "icon": "local_dining" }
+]
